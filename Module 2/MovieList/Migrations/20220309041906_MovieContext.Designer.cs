@@ -10,8 +10,8 @@ using MovieList.Models;
 namespace MovieList.Migrations
 {
     [DbContext(typeof(MovieContext))]
-    [Migration("20220125230721_Genre")]
-    partial class Genre
+    [Migration("20220309041906_MovieContext")]
+    partial class MovieContext
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
