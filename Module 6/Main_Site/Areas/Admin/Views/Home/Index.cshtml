@@ -1,0 +1,21 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Main Page</title>
+</head>
+<body>
+    <header>
+        <h1>CIS 174 Advance C#</h1>
+        <a asp-area="Admin" asp-controller="Home" asp-action="Index">Home</a>
+        <a asp-area="Admin" asp-controller="Home" asp-action="About">About</a>
+        <a asp-area="Admin" asp-controller="Product" asp-action="List" asp-route-cat="All">Products</a>
+    </header>
+    <main>
+        <h2>Admin Mode</h2>
+        <button onclick="window.location.href='/'">Exit Admin Mode</button>
+    </main>
+</body>
+</html>

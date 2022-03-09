@@ -1,0 +1,29 @@
+﻿@model List<Student>
+@{
+    ViewData["Title"] = "StudentList";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h1>Student List</h1>
+
+<div>
+    @if (ViewBag.AccessLevel < 2 && ViewBag.AccessLevel > 0)
+    {
+        <p>You do not have sufficient access level to view this data.</p>
+    }
+    else if (ViewBag.AccessLevel < 8 && ViewBag.AccessLevel > 0)
+    {
+        foreach (Student stu in ViewBag.StudentList)
+        {
+            <p>Student: @stu.FirstName @stu.LastName </p>
+        }
+    }
+    else if (ViewBag.AccessLevel > 0)
+    {
+        <h2>Hello Admin</h2>
+        foreach (Student stu in ViewBag.StudentList)
+        {
+            <p>Student: @stu.FirstName @stu.LastName Grade: @stu.Grade</p>
+        }
+    }
+</div>

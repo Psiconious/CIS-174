@@ -1,0 +1,34 @@
+﻿@{
+    Layout = "_Layout";
+    string controller = ViewContext.RouteData.Values["controller"].ToString();
+    string action = ViewContext.RouteData.Values["action"].ToString();
+}
+
+<header>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Trever Cluney</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="@(controller == "Home" && action == "Index" ? "active" : "")"><a asp-controller="Home" asp-action="Index">Home</a></li>
+                <li class="@(controller == "Home" && action == "About" ? "active" : "")"><a asp-controller="Home" asp-action="About">About</a></li>
+                <li class="@(controller == "Product" && action == "List" ? "active" : "")"><a asp-controller="Product" asp-action="List">Products</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" >Assignments<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a asp-controller="Student" asp-action="Student">Assignment 6.1</a></li>
+                        <li><a asp-controller="" asp-action="">Assignment 7.3</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+@RenderBody()
+
+<footer>
+    <hr />
+    <p>&copy; @DateTime.Now.Year - Trever Cluney Advance C# Homework Page</p>
+</footer>

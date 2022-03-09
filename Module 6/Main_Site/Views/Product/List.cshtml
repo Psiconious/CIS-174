@@ -1,0 +1,22 @@
+﻿
+@{
+    Layout = "_MainLayout";
+}
+
+<style>
+    a:link, a:visited{
+        text-decoration: none;
+        color:black;
+    }
+</style>
+
+<main>
+    @foreach (string category in ViewBag.Categories)
+    {
+        <div>
+            <a href="/Products/@category/">@category</a>
+        </div>
+    }
+    <a asp-controller="Product" asp-action="Detail"><button>Test Product</button></a>
+    <a asp-controller="Product" asp-action="Detail" asp-route-id="1"><button>Test Product 1</button></a>
+</main>

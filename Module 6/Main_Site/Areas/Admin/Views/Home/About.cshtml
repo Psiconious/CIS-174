@@ -1,0 +1,32 @@
+﻿
+@{
+    string message = "Welcome!";
+    if (ViewBag.CustomerName != null)
+    {
+        message = "Welcome back!";
+    }
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>About</title>
+</head>
+<body>
+    <header>
+    <h1>CIS 174 Advance C#</h1>
+    <h2>@message</h2>
+    <p>Customer Name: @ViewBag.CustomerName</p>
+    <nav>
+        <a href="/">Home</a>
+        <a href="About">About</a>
+        <a href="Products">Products</a>
+    </nav>
+    </header>
+    <main>
+        <p>2 + 2 = @(2+2)</p>
+    </main>
+</body>
+</html>

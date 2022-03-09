@@ -1,0 +1,20 @@
+﻿
+@{
+    Layout = "_MainLayout";
+    string message = "Welcome!";
+    if (ViewBag.CustomerName != null)
+    {
+        message = "Welcome back!";
+    }
+}
+
+<main>
+    <p>2 + 2 = @(2+2)</p>
+    <label for="month">Month: </label>
+    <select name="month" id="month">
+        @for (int month = 1; month <= 12; month++)
+        {
+            <option value="@month">@month</option>
+        }
+    </select>
+</main>
